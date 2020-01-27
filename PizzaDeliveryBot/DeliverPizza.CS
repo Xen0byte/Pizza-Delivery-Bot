@@ -6,7 +6,7 @@ namespace PizzaDeliveryBot
     {
         static void Main()
         {
-            Console.WriteLine("Deliver Pizza!");
+            Console.WriteLine("Deliver Some Pizza!");
         }
     }
 }

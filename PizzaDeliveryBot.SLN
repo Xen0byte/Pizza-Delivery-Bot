@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{87BCD47F-38CA-4803-9041-4A36FB6F9094}"
 	ProjectSection(SolutionItems) = preProject
 		INSTRUCTIONS.TXT = INSTRUCTIONS.TXT
-		ORDERS.TXT = ORDERS.TXT
 	EndProjectSection
 EndProject
 Global
