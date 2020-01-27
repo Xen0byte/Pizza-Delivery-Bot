@@ -14,11 +14,17 @@ namespace PizzaDeliveryBot.Logic
 
 
             for (int i = 1; i <= Orders.Count; i++)
-            {
-                if ((i % 3 != 2 && Orders[i].Length == 3 && Orders[i].All(char.IsLetterOrDigit)) == false) return false;
+                switch (i % 3)
+                {
+                    case 1:
+                    case 3:
+                        if ((Orders[i - 1].Length == 3 && Orders[i - 1].All(char.IsLetterOrDigit)) == false) return false;
+                        break;
 
-                if ((i % 3 == 2 && Orders[i].All(char.IsLetter)) == false) return false;
-            }
+                    case 2:
+                        if (Orders[i - 1].All(char.IsLetter) == false) return false;
+                        break;
+                }
 
             return true;
         }
