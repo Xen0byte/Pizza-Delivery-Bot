@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PizzaDeliveryBot.Models
 {
-    public static class DeliveryRoute   /* DeliveryRoute Is A Singleton */
+    public static class DeliveryRoute /* DeliveryRoute Is A Singleton */
     {
         public static List<Delivery> Deliveries;
 

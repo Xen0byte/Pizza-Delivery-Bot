@@ -2,9 +2,9 @@
 
 namespace PizzaDeliveryBot
 {
-    class DeliverPizza
+    internal class DeliverPizza
     {
-        static void Main()
+        private static void Main()
         {
             Console.WriteLine("Deliver Some Pizza!");
         }
