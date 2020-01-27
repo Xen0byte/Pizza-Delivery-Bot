@@ -10,9 +10,9 @@ namespace PizzaDeliveryBot.Helpers
         private static readonly List<string> RawSourceFileLines = File.ReadAllLines(Environment.SourceFile).ToList();
         private static readonly List<string> SanitizedSourceFileLines = SanitizeSourceFileLines();
 
-        private static List<string> SanitizeSourceFileLines()
-        {
-            return RawSourceFileLines.Select(line => line.Replace(" ", "")).Where(sanitizedLine => !string.IsNullOrEmpty(sanitizedLine)).ToList();
-        }
+        private static List<string> SanitizeSourceFileLines() =>
+            RawSourceFileLines.
+                Select(line => line.Replace(" ", "")).
+                Where(sanitizedLine => !string.IsNullOrEmpty(sanitizedLine)).ToList();
     }
 }
