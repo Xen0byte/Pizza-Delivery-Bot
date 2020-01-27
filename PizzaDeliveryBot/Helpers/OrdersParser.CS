@@ -14,5 +14,7 @@ namespace PizzaDeliveryBot.Helpers
             RawSourceFileLines.
                 Select(line => line.Replace(" ", "")).
                 Where(sanitizedLine => !string.IsNullOrEmpty(sanitizedLine)).ToList();
+
+        public static List<string> GetSanitizedOrders() => SanitizedSourceFileLines;
     }
 }
