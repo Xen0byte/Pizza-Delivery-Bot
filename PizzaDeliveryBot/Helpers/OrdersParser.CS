@@ -5,7 +5,7 @@ using PizzaDeliveryBot.Settings;
 
 namespace PizzaDeliveryBot.Helpers
 {
-    internal static class GenerateDeliveryRoute
+    internal static class OrdersParser
     {
         private static readonly List<string> RawSourceFileLines = File.ReadAllLines(Environment.SourceFile).ToList();
         private static readonly List<string> SanitizedSourceFileLines = SanitizeSourceFileLines();
