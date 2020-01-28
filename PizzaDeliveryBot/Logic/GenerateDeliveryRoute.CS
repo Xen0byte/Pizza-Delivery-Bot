@@ -39,14 +39,16 @@ namespace PizzaDeliveryBot.Logic
 
             List<Delivery> deliveries = new List<Delivery>();
 
-            for (int i = 0; i < Orders.Count - 3; i += 3)
+            for (int i = 0; i <= Orders.Count - 3; i += 3)
             {
-                Delivery delivery = new Delivery();
-                delivery.StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString()));
-                delivery.StartingFacingDirection = new Direction().ParseDirection(Orders[i][2].ToString());
-                delivery.Route = new Instruction().ParseInstructions(Orders[i + 1]);
-                delivery.EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString()));
-                delivery.EndingFacingDirection = new Direction().ParseDirection(Orders[i + 2][2].ToString());
+                Delivery delivery = new Delivery
+                {
+                    StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
+                    StartingFacingDirection = new Direction().ParseDirection(Orders[i][2].ToString()),
+                    Route = new Instruction().ParseInstructions(Orders[i + 1]),
+                    EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
+                    EndingFacingDirection = new Direction().ParseDirection(Orders[i + 2][2].ToString())
+                };
 
                 deliveries.Add(delivery);
             }

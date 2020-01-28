@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
 
 namespace PizzaDeliveryBot.Models
 {
@@ -15,19 +12,14 @@ namespace PizzaDeliveryBot.Models
 
         public void TurnLeft()
         {
-
         }
 
         public void TurnRight()
         {
-
         }
 
         public void MoveForward()
         {
-
         }
-
-
     }
 }

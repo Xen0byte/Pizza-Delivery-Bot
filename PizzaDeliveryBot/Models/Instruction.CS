@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PizzaDeliveryBot.Models
 {
@@ -21,7 +20,7 @@ namespace PizzaDeliveryBot.Models
             };
         }
 
-        public List<Instruction> ParseInstructions (string instructions)
+        public List<Instruction> ParseInstructions(string instructions)
         {
             List<Instruction> parsedInstructions = new List<Instruction>();
 
