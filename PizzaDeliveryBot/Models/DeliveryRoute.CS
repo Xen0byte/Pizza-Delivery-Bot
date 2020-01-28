@@ -6,15 +6,9 @@ namespace PizzaDeliveryBot.Models
     public static class DeliveryRoute
     {
         public static List<Delivery> Deliveries;
-
-        public static Tuple<int, int> SetStartingCoordinates()
-        {
-            throw new NotImplementedException();
-        }
-
-        public static Direction SetStartingFacingDirection()
-        {
-            throw new NotImplementedException();
-        }
+        public static Tuple<int, int> StartingLocation { get; set; }
+        public static string StartingFacingDirection { get; set; }
+        public static Tuple<int, int> EndingLocation { get; set; }
+        public static string EndingFacingDirection { get; set; }
     }
 }

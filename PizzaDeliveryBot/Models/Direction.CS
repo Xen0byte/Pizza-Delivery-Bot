@@ -4,12 +4,12 @@ namespace PizzaDeliveryBot.Models
 {
     public class Direction
     {
-        public Direction North { get; set; }
-        public Direction East { get; set; }
-        public Direction South { get; set; }
-        public Direction West { get; set; }
+        private const string North = "North";
+        private const string East = "East";
+        private const string South = "South";
+        private const string West = "West";
 
-        public Direction ParseDirection(string direction)
+        public string ParseDirection(string direction)
         {
             return direction switch
             {

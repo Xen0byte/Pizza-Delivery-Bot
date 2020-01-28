@@ -5,11 +5,11 @@ namespace PizzaDeliveryBot.Models
 {
     public class Instruction
     {
-        public Instruction Left { get; set; }
-        public Instruction Right { get; set; }
-        public Instruction Forward { get; set; }
+        private const string Left = "Left";
+        private const string Right = "Right";
+        private const string Forward = "Forward";
 
-        public Instruction ParseInstruction(string instruction)
+        public string ParseInstruction(string instruction)
         {
             return instruction switch
             {
@@ -20,9 +20,9 @@ namespace PizzaDeliveryBot.Models
             };
         }
 
-        public List<Instruction> ParseInstructions(string instructions)
+        public List<string> ParseInstructions(string instructions)
         {
-            List<Instruction> parsedInstructions = new List<Instruction>();
+            List<string> parsedInstructions = new List<string>();
 
             foreach (char instruction in instructions)
                 switch (instruction.ToString())
