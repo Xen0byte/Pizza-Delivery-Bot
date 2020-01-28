@@ -9,17 +9,6 @@ namespace PizzaDeliveryBot.Models
         private const string Right = "Right";
         private const string Forward = "Forward";
 
-        public string ParseInstruction(string instruction)
-        {
-            return instruction switch
-            {
-                "L" => Left,
-                "R" => Right,
-                "F" => Forward,
-                _ => throw new ArgumentException()
-            };
-        }
-
         public List<string> ParseInstructions(string instructions)
         {
             List<string> parsedInstructions = new List<string>();
