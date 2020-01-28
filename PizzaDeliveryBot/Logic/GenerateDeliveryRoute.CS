@@ -44,10 +44,10 @@ namespace PizzaDeliveryBot.Logic
                 Delivery delivery = new Delivery
                 {
                     StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
-                    StartingFacingDirection = new Direction().ParseDirection(Orders[i][2].ToString()),
-                    Route = new Instruction().ParseInstructions(Orders[i + 1]),
+                    StartingFacingDirection = DeliveryBot.ParseDirection(Orders[i][2].ToString()),
+                    Route = DeliveryBot.ParseInstructions(Orders[i + 1]),
                     EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
-                    EndingFacingDirection = new Direction().ParseDirection(Orders[i + 2][2].ToString())
+                    EndingFacingDirection = DeliveryBot.ParseDirection(Orders[i + 2][2].ToString())
                 };
 
                 deliveries.Add(delivery);

@@ -2,23 +2,22 @@
 
 namespace PizzaDeliveryBot.Models
 {
-    public class Action
+    public static class Action
     {
-        public Tuple<int, int> StartingLocation { get; set; }
-        public string StartingFacingDirection { get; set; }
-        public Instruction Instruction { get; set; }
-        public Tuple<int, int> EndingLocation { get; set; }
-        public string EndingFacingDirection { get; set; }
+        public static Tuple<int, int> StartingLocation { get; set; }
+        public static DeliveryBot.Direction StartingFacingDirection { get; set; }
+        public static Tuple<int, int> EndingLocation { get; set; }
+        public static DeliveryBot.Direction EndingFacingDirection { get; set; }
 
-        public void TurnLeft()
+        private static void TurnLeft()
         {
         }
 
-        public void TurnRight()
+        private static void TurnRight()
         {
         }
 
-        public void MoveForward()
+        private static void MoveForward()
         {
         }
     }
