@@ -22,11 +22,11 @@ namespace PizzaDeliveryBot.Logic
                 {
                     case 1:
                     case 3:
-                        if ((Orders[i - 1].Length == 3 && Orders[i - 1].All(char.IsLetterOrDigit)) == false) return false;
+                        if ((Orders[i - 1].Length == 3 && Orders[i - 1].All(char.IsLetterOrDigit)) == false) return false; //TODO: Make Validation More Strict (RegEx Match)
                         break;
 
                     case 2:
-                        if (Orders[i - 1].All(char.IsLetter) == false) return false;
+                        if (Orders[i - 1].All(char.IsLetter) == false) return false; //TODO: Make Validation More Strict (RegEx Match)
                         break;
                 }
 
@@ -41,14 +41,12 @@ namespace PizzaDeliveryBot.Logic
 
             for (int i = 0; i < Orders.Count - 3; i += 3)
             {
-                Delivery delivery = new Delivery
-                {
-                    StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
-                    StartingFacingDirection = new Direction().ParseDirection(Orders[i][2].ToString()),
-                    Route = new Direction().ParseDirections(Orders[i + 1]),
-                    EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
-                    EndingFacingDirection = new Direction().ParseDirection(Orders[i + 2][2].ToString())
-                };
+                Delivery delivery = new Delivery();
+                delivery.StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString()));
+                delivery.StartingFacingDirection = new Direction().ParseDirection(Orders[i][2].ToString());
+                delivery.Route = new Instruction().ParseInstructions(Orders[i + 1]);
+                delivery.EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString()));
+                delivery.EndingFacingDirection = new Direction().ParseDirection(Orders[i + 2][2].ToString());
 
                 deliveries.Add(delivery);
             }

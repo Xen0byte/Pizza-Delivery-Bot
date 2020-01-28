@@ -2,7 +2,7 @@
 
 namespace PizzaDeliveryBot.Models
 {
-    public static class DeliveryBot /* DeliveryBot Is A Singleton */
+    public static class DeliveryBot
     {
         public static Tuple<int, int> CurrentCoordinates = DeliveryRoute.SetStartingCoordinates();
         public static Direction FacingDirection = DeliveryRoute.SetStartingFacingDirection();
