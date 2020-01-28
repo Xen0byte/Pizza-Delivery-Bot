@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PizzaDeliveryBot.Models
 {
@@ -11,14 +12,39 @@ namespace PizzaDeliveryBot.Models
 
         public Direction ParseDirection(string direction)
         {
-            switch (direction)
+            return direction switch
             {
-                case "N": return North;
-                case "E": return East; 
-                case "S": return South;
-                case "W": return West; 
-                default: throw new ArgumentException();
-            }
+                "N" => North,
+                "E" => East,
+                "S" => South,
+                "W" => West,
+                _ => throw new ArgumentException()
+            };
+        }
+
+        public List<Direction> ParseDirections(string directions)
+        {
+            List<Direction> parsedDirections = new List<Direction>();
+
+            foreach (char direction in directions)
+                switch (direction.ToString())
+                {
+                    case "N":
+                        parsedDirections.Add(North);
+                        break;
+                    case "E":
+                        parsedDirections.Add(East);
+                        break;
+                    case "S":
+                        parsedDirections.Add(South);
+                        break;
+                    case "W":
+                        parsedDirections.Add(West);
+                        break;
+                    default: throw new ArgumentException();
+                }
+
+            return parsedDirections;
         }
     }
 }
