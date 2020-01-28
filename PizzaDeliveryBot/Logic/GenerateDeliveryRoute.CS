@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -43,10 +43,10 @@ namespace PizzaDeliveryBot.Logic
             {
                 Delivery delivery = new Delivery
                 {
-                    StartingLocation = Tuple.Create<int, int>(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
+                    StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
                     StartingFacingDirection = new Direction().ParseDirection(Orders[i][2].ToString()),
                     Route = new Direction().ParseDirections(Orders[i + 1]),
-                    EndingLocation = Tuple.Create<int, int>(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
+                    EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
                     EndingFacingDirection = new Direction().ParseDirection(Orders[i + 2][2].ToString())
                 };
 
