@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static PizzaDeliveryBot.Models.DeliveryBot;
 
 namespace PizzaDeliveryBot.Models
 {
@@ -10,7 +11,14 @@ namespace PizzaDeliveryBot.Models
 
         public static List<Delivery> Deliveries = Logic.GenerateDeliveryRoute.BuildRoute();
 
-        public static void TurnLeft() { }
+        public static void TurnLeft()
+        {
+            switch (CurrentFacingDirection)
+            {
+                case North: CurrentFacingDirection = Direction.South;
+            }
+        }
+
         public static void TurnRight() { }
         public static void MoveForward() { }
     }
