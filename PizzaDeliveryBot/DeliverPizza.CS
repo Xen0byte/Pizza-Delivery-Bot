@@ -1,4 +1,6 @@
-﻿using PizzaDeliveryBot.Logic;
+﻿using System;
+using System.Collections.Concurrent;
+using PizzaDeliveryBot.Logic;
 
 namespace PizzaDeliveryBot
 {
@@ -6,7 +8,7 @@ namespace PizzaDeliveryBot
     {
         private static void Main()
         {
-            GenerateDeliveryRoute.GetDeliveryRoute();
+            Console.WriteLine("Deliver Some Pizza!");
         }
     }
 }
