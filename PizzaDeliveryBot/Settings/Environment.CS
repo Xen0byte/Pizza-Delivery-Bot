@@ -2,7 +2,7 @@
 
 namespace PizzaDeliveryBot.Settings
 {
-    public class Environment
+    public static class Environment
     {
         private const string SourceFileName = "ORDERS.TXT";
         private static readonly string SourceFileDirectory = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "DATA";

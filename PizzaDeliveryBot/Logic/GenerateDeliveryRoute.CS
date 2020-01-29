@@ -33,11 +33,17 @@ namespace PizzaDeliveryBot.Logic
             return true;
         }
 
+        private static bool ValidatePathIntegrity(IReadOnlyList<Tuple<BotState, BotState>> keyStates)
+        {
+            // TODO: Implement This And Run At The End Of BuildRoute()
+        }
+
         private static List<Delivery> BuildRoute()
         {
             if (!ValidateOrders()) throw new ValidationException();
 
             List<Delivery> deliveries = new List<Delivery>();
+            List<Tuple<BotState, BotState>> keyStates = new List<Tuple<BotState, BotState>>();
 
             for (int i = 0; i <= Orders.Count - 3; i += 3)
             {
@@ -49,6 +55,8 @@ namespace PizzaDeliveryBot.Logic
                     EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
                     EndingFacingDirection = DeliveryBot.ParseDirection(Orders[i + 2][2].ToString())
                 };
+
+                keyStates.Add(Tuple.Create(new BotState(delivery.StartingLocation, delivery.StartingFacingDirection), new BotState(delivery.EndingLocation, delivery.EndingFacingDirection)));
 
                 deliveries.Add(delivery);
             }
