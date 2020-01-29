@@ -12,35 +12,9 @@ namespace PizzaDeliveryBot.Logic
         private static readonly List<string> Orders = OrdersParser.GetSanitizedOrders();
         private static readonly List<Delivery> DeliveryRoute = BuildRoute();
 
-        private static bool ValidateOrders()
-        {
-            if (Orders.Count % 3 != 0) return false;
-
-
-            for (int i = 1; i <= Orders.Count; i++)
-                switch (i % 3)
-                {
-                    case 1:
-                    case 3:
-                        if ((Orders[i - 1].Length == 3 && Orders[i - 1].All(char.IsLetterOrDigit)) == false) return false; //TODO: Make Validation More Strict (RegEx Match)
-                        break;
-
-                    case 2:
-                        if (Orders[i - 1].All(char.IsLetter) == false) return false; //TODO: Make Validation More Strict (RegEx Match)
-                        break;
-                }
-
-            return true;
-        }
-
-        private static bool ValidatePathIntegrity(IReadOnlyList<Tuple<BotState, BotState>> keyStates)
-        {
-            // TODO: Implement This And Run At The End Of BuildRoute()
-        }
-
         private static List<Delivery> BuildRoute()
         {
-            if (!ValidateOrders()) throw new ValidationException();
+            if (!InputDataValidation.ValidateOrders(Orders)) throw new ValidationException();
 
             List<Delivery> deliveries = new List<Delivery>();
             List<Tuple<BotState, BotState>> keyStates = new List<Tuple<BotState, BotState>>();
@@ -60,6 +34,8 @@ namespace PizzaDeliveryBot.Logic
 
                 deliveries.Add(delivery);
             }
+
+            if (!InputDataValidation.ValidatePathIntegrity(keyStates)) throw new ValidationException();
 
             return deliveries;
         }

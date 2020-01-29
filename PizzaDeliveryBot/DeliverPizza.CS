@@ -7,7 +7,7 @@ namespace PizzaDeliveryBot
     {
         private static void Main()
         {
-            Console.WriteLine(GenerateDeliveryRoute.GetDeliveryRoute());
+            GenerateDeliveryRoute.GetDeliveryRoute();
         }
     }
 }
