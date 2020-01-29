@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using PizzaDeliveryBot.Helpers;
 using PizzaDeliveryBot.Models;
 
@@ -17,7 +16,6 @@ namespace PizzaDeliveryBot.Logic
             if (!InputDataValidation.ValidateOrders(Orders)) throw new ValidationException();
 
             List<Delivery> deliveries = new List<Delivery>();
-            List<Tuple<BotState, BotState>> keyStates = new List<Tuple<BotState, BotState>>();
 
             for (int i = 0; i <= Orders.Count - 3; i += 3)
             {
@@ -30,12 +28,8 @@ namespace PizzaDeliveryBot.Logic
                     EndingFacingDirection = DeliveryBot.ParseDirection(Orders[i + 2][2].ToString())
                 };
 
-                keyStates.Add(Tuple.Create(new BotState(delivery.StartingLocation, delivery.StartingFacingDirection), new BotState(delivery.EndingLocation, delivery.EndingFacingDirection)));
-
                 deliveries.Add(delivery);
             }
-
-            if (!InputDataValidation.ValidatePathIntegrity(keyStates)) throw new ValidationException();
 
             return deliveries;
         }

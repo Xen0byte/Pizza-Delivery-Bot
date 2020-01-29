@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using PizzaDeliveryBot.Models;
 
 namespace PizzaDeliveryBot.Logic
 {
@@ -24,15 +22,6 @@ namespace PizzaDeliveryBot.Logic
                         if (orders[i - 1].All(char.IsLetter) == false) return false; //TODO: Make Validation More Strict (RegEx Match)
                         break;
                 }
-
-            return true;
-        }
-
-        internal static bool ValidatePathIntegrity(IReadOnlyList<Tuple<BotState, BotState>> keyStates)
-        {
-            for (int i = 1; i < keyStates.Count; i++)
-                if (keyStates[i].Item1 != keyStates[i - 1].Item2)
-                    return false;
 
             return true;
         }
