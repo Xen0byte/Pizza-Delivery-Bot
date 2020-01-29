@@ -7,6 +7,7 @@ namespace PizzaDeliveryBot.Models
     {
         public enum Direction
         {
+            None,
             North,
             East,
             South,
@@ -15,6 +16,7 @@ namespace PizzaDeliveryBot.Models
 
         public enum Instruction
         {
+            None,
             Left,
             Right,
             Forward
