@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using PizzaDeliveryBot.Helpers;
 using PizzaDeliveryBot.Models;
 
@@ -18,7 +15,7 @@ namespace PizzaDeliveryBot.Logic
 
             for (int i = 0; i <= Orders.Count - 3; i += 3)
             {
-                Delivery delivery = new Delivery
+                Delivery delivery = new Delivery // TODO: Make This Prettier
                 {
                     StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
                     StartingFacingDirection = DeliveryBot.ParseDirection(Orders[i][2].ToString()),
