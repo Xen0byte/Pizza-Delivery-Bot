@@ -9,7 +9,6 @@ namespace PizzaDeliveryBot.Models
         public DeliveryBot.Direction StartingFacingDirection { get; set; }
         public Tuple<int, int> EndingLocation { get; set; }
         public DeliveryBot.Direction EndingFacingDirection { get; set; }
-
         public List<DeliveryBot.Instruction> Route { get; set; }
     }
 }

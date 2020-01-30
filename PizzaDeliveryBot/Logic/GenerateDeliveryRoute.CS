@@ -21,10 +21,10 @@ namespace PizzaDeliveryBot.Logic
                 Delivery delivery = new Delivery // TODO: Make This Prettier
                 {
                     StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
-                    StartingFacingDirection = DeliveryBot.ParseDirection(Orders[i][2].ToString()),
-                    Route = DeliveryBot.ParseInstructions(Orders[i + 1]),
+                    StartingFacingDirection = DirectionParser.ParseDirection(Orders[i][2].ToString()),
+                    Route = InstructionsParser.ParseInstructions(Orders[i + 1]),
                     EndingLocation = Tuple.Create(int.Parse(Orders[i + 2][0].ToString()), int.Parse(Orders[i + 2][1].ToString())),
-                    EndingFacingDirection = DeliveryBot.ParseDirection(Orders[i + 2][2].ToString())
+                    EndingFacingDirection = DirectionParser.ParseDirection(Orders[i + 2][2].ToString())
                 };
 
                 deliveries.Add(delivery);
