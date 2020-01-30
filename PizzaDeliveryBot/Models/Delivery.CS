@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace PizzaDeliveryBot.Models
 {
-    public class Delivery
+    internal class Delivery
     {
-        public Tuple<int, int> StartingLocation { get; set; }
-        public DeliveryBot.Direction StartingFacingDirection { get; set; }
-        public Tuple<int, int> EndingLocation { get; set; }
-        public DeliveryBot.Direction EndingFacingDirection { get; set; }
-        public List<DeliveryBot.Instruction> Route { get; set; }
+        internal Tuple<int, int> StartingLocation { get; set; }
+        internal DeliveryBot.Direction StartingFacingDirection { get; set; }
+        internal Tuple<int, int> EndingLocation { get; set; }
+        internal DeliveryBot.Direction EndingFacingDirection { get; set; }
+        internal List<DeliveryBot.Instruction> Route { get; set; }
     }
 }

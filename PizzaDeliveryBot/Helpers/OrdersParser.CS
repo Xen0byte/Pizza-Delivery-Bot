@@ -15,6 +15,6 @@ namespace PizzaDeliveryBot.Helpers
                 Select(line => line.Replace(" ", "")).
                 Where(sanitizedLine => !string.IsNullOrEmpty(sanitizedLine)).ToList(); // TODO: Refactor To Support Multiple-Digit Coordinates
 
-        public static List<string> GetSanitizedOrders() => SanitizedSourceFileLines;
+        internal static List<string> GetSanitizedOrders() => SanitizedSourceFileLines;
     }
 }

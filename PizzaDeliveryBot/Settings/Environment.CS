@@ -2,10 +2,10 @@
 
 namespace PizzaDeliveryBot.Settings
 {
-    public static class Environment
+    internal static class Environment
     {
         private const string SourceFileName = "ORDERS.TXT";
         private static readonly string SourceFileDirectory = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "DATA";
-        public static string SourceFile = SourceFileDirectory + Path.DirectorySeparatorChar + SourceFileName;
+        internal static string SourceFile = SourceFileDirectory + Path.DirectorySeparatorChar + SourceFileName;
     }
 }

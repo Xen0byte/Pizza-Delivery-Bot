@@ -3,9 +3,9 @@ using static PizzaDeliveryBot.Models.DeliveryBot;
 
 namespace PizzaDeliveryBot.Helpers
 {
-    public static class DirectionParser
+    internal static class DirectionParser
     {
-        public static Direction ParseDirection(string direction)
+        internal static Direction ParseDirection(string direction)
         {
             return direction switch
             {

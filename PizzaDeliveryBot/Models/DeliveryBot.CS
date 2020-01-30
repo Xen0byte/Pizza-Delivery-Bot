@@ -4,9 +4,9 @@ using static PizzaDeliveryBot.Models.DeliveryRoute;
 namespace PizzaDeliveryBot.Models
 
 {
-    public static class DeliveryBot
+    internal static class DeliveryBot
     {
-        public enum Direction
+        internal enum Direction
         {
             North,
             East,
@@ -14,14 +14,14 @@ namespace PizzaDeliveryBot.Models
             West
         }
 
-        public enum Instruction
+        internal enum Instruction
         {
             Left,
             Right,
             Forward
         }
 
-        public static void TurnLeft()
+        internal static void TurnLeft()
         {
             Direction directionStore = CurrentFacingDirection;
 
@@ -37,7 +37,7 @@ namespace PizzaDeliveryBot.Models
             Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] The delivery bot has TURNED LEFT. His new facing direction is {CurrentFacingDirection}.");
         }
 
-        public static void TurnRight()
+        internal static void TurnRight()
         {
             Direction directionStore = CurrentFacingDirection;
 
@@ -53,7 +53,7 @@ namespace PizzaDeliveryBot.Models
             Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] The delivery bot has TURNED RIGHT. His new facing direction is {CurrentFacingDirection}.");
         }
 
-        public static void MoveForward()
+        internal static void MoveForward()
         {
             Tuple<int, int> coordinatesStore = CurrentLocation;
 

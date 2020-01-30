@@ -6,11 +6,11 @@ using PizzaDeliveryBot.Models;
 
 namespace PizzaDeliveryBot.Logic
 {
-    public static class GenerateDeliveryRoute
+    internal static class GenerateDeliveryRoute
     {
-        public static readonly List<string> Orders = OrdersParser.GetSanitizedOrders();
+        internal static readonly List<string> Orders = OrdersParser.GetSanitizedOrders();
 
-        public static List<Delivery> BuildRoute()
+        internal static List<Delivery> BuildRoute()
         {
             if (!InputDataValidation.ValidateOrders(Orders)) throw new ValidationException();
 

@@ -4,9 +4,9 @@ using static PizzaDeliveryBot.Models.DeliveryBot;
 
 namespace PizzaDeliveryBot.Helpers
 {
-    public static class InstructionsParser
+    internal static class InstructionsParser
     {
-        public static List<Instruction> ParseInstructions(string instructions)
+        internal static List<Instruction> ParseInstructions(string instructions)
         {
             List<Instruction> parsedInstructions = new List<Instruction>();
 

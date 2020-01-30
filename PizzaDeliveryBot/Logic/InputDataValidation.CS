@@ -5,7 +5,7 @@ namespace PizzaDeliveryBot.Logic
 {
     internal static class InputDataValidation
     {
-        public static bool ValidateOrders(List<string> orders)
+        internal static bool ValidateOrders(List<string> orders)
         {
             if (orders.Count % 3 != 0) return false;
 
