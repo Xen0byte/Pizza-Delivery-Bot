@@ -1,4 +1,4 @@
-﻿using System;
+﻿using PizzaDeliveryBot.Logic;
 
 namespace PizzaDeliveryBot
 {
@@ -6,7 +6,7 @@ namespace PizzaDeliveryBot
     {
         private static void Main()
         {
-            Console.WriteLine("Deliver Some Pizza!");
+            RunDeliveryRoute.DeliverPizza();
         }
     }
 }

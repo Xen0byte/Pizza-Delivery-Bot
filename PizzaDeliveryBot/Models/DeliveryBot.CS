@@ -34,7 +34,8 @@ namespace PizzaDeliveryBot.Models
                 _ => throw new ArgumentException()
             };
 
-            Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] The delivery bot has TURNED LEFT. His new facing direction is {CurrentFacingDirection}.");
+            Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] " + 
+                              $"The delivery bot has TURNED LEFT. His new facing direction is {CurrentFacingDirection.ToString().ToUpper()}.");
         }
 
         internal static void TurnRight()
@@ -50,7 +51,8 @@ namespace PizzaDeliveryBot.Models
                 _ => throw new ArgumentException()
             };
 
-            Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] The delivery bot has TURNED RIGHT. His new facing direction is {CurrentFacingDirection}.");
+            Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] " +
+                              $"The delivery bot has TURNED RIGHT. His new facing direction is {CurrentFacingDirection.ToString().ToUpper()}.");
         }
 
         internal static void MoveForward()
@@ -66,7 +68,8 @@ namespace PizzaDeliveryBot.Models
                 _ => throw new ArgumentException()
             };
 
-            Console.WriteLine($"[{coordinatesStore.Item1:D2}:{coordinatesStore.Item2:D2}:{CurrentFacingDirection.ToString()[0]}] The delivery bot has MOVED FORWARD. His new coordinates are [{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}].");
+            Console.WriteLine($"[{coordinatesStore.Item1:D2}:{coordinatesStore.Item2:D2}:{CurrentFacingDirection.ToString()[0]}] " +
+                              $"The delivery bot has MOVED FORWARD. His new coordinates are [{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}].");
         }
     }
 }
