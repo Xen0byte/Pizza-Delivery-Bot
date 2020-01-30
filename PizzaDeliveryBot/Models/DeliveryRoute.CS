@@ -13,13 +13,48 @@ namespace PizzaDeliveryBot.Models
 
         public static void TurnLeft()
         {
-            switch (CurrentFacingDirection)
+            DeliveryBot.Direction directionStore = CurrentFacingDirection;
+
+            CurrentFacingDirection = CurrentFacingDirection switch
             {
-                case North: CurrentFacingDirection = Direction.South;
-            }
+                Direction.North => Direction.West,
+                Direction.East => Direction.North,
+                Direction.South => Direction.East,
+                Direction.West => Direction.South,
+                _ => throw new ArgumentException(),
+            };
+
+            Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] The delivery bot has TURNED LEFT. His new facing direction is {CurrentFacingDirection}.");
         }
 
-        public static void TurnRight() { }
-        public static void MoveForward() { }
+        public static void TurnRight()
+        {
+            DeliveryBot.Direction directionStore = CurrentFacingDirection;
+
+            CurrentFacingDirection = CurrentFacingDirection switch
+            {
+                Direction.North => Direction.East,
+                Direction.East => Direction.South,
+                Direction.South => Direction.West,
+                Direction.West => Direction.North,
+                _ => throw new ArgumentException(),
+            };
+
+            Console.WriteLine($"[{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}:{directionStore.ToString()[0]}] The delivery bot has TURNED RIGHT. His new facing direction is {CurrentFacingDirection}.");
+        }
+
+        public static void MoveForward()
+        {
+            Tuple<int, int> coordinatesStore = CurrentLocation;
+
+            switch (CurrentFacingDirection)
+            {
+                case Direction.North: break;
+                case Direction.East: break;
+                case Direction.South: break;
+                case Direction.West: break;
+                default: throw new ArgumentException();
+            }
+        }
     }
 }
