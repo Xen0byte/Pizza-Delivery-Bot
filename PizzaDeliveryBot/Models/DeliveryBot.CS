@@ -7,21 +7,6 @@ namespace PizzaDeliveryBot.Models
 {
     internal static class DeliveryBot
     {
-        internal enum Direction
-        {
-            North,
-            East,
-            South,
-            West
-        }
-
-        internal enum Instruction
-        {
-            Left,
-            Right,
-            Forward
-        }
-
         internal static void TurnLeft()
         {
             Direction directionStore = CurrentFacingDirection;
@@ -35,7 +20,7 @@ namespace PizzaDeliveryBot.Models
                 _ => throw new ArgumentException()
             };
 
-            Console.WriteLine($"[{GetCoordinatesWithSign(CurrentLocation)}:{directionStore.ToString()[0]}] " + 
+            Console.WriteLine($"[{GetCoordinatesWithSign(CurrentLocation)}:{directionStore.ToString()[0]}] " +
                               $"The delivery bot has TURNED LEFT. His new facing direction is {CurrentFacingDirection.ToString().ToUpper()}.");
         }
 
@@ -71,6 +56,21 @@ namespace PizzaDeliveryBot.Models
 
             Console.WriteLine($"[{GetCoordinatesWithSign(coordinatesStore)}:{CurrentFacingDirection.ToString()[0]}] " +
                               $"The delivery bot has MOVED FORWARD. His new coordinates are [{GetCoordinatesWithSign(CurrentLocation)}].");
+        }
+
+        internal enum Direction
+        {
+            North,
+            East,
+            South,
+            West
+        }
+
+        internal enum Instruction
+        {
+            Left,
+            Right,
+            Forward
         }
     }
 }
