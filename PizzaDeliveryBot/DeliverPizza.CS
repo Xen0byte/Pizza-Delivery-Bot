@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using PizzaDeliveryBot.Logic;
 
 namespace PizzaDeliveryBot
 {
