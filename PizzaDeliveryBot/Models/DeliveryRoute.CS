@@ -55,6 +55,8 @@ namespace PizzaDeliveryBot.Models
                 Direction.West => new Tuple<int, int>(CurrentLocation.Item1 - 1, CurrentLocation.Item2),
                 _ => throw new ArgumentException(),
             };
+
+            Console.WriteLine($"[{coordinatesStore.Item1:D2}:{coordinatesStore.Item2:D2}:{CurrentFacingDirection.ToString()[0]}] The delivery bot has MOVED FORWARD. His new coordinates are [{CurrentLocation.Item1:D2}:{CurrentLocation.Item2:D2}].");
         }
     }
 }
