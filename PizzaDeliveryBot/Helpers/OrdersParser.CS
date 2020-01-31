@@ -13,7 +13,7 @@ namespace PizzaDeliveryBot.Helpers
         private static List<string> SanitizeSourceFileLines() =>
             RawSourceFileLines.
                 Select(line => line.Replace(" ", "")).
-                Where(sanitizedLine => !string.IsNullOrEmpty(sanitizedLine)).ToList(); // TODO: Refactor To Support Multiple-Digit Coordinates
+                Where(sanitizedLine => !string.IsNullOrEmpty(sanitizedLine)).ToList();
 
         internal static List<string> GetSanitizedOrders() => SanitizedSourceFileLines;
     }
