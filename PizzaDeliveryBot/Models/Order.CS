@@ -4,7 +4,7 @@ using static PizzaDeliveryBot.Models.DeliveryBot;
 
 namespace PizzaDeliveryBot.Models
 {
-    internal class Delivery
+    internal class Order
     {
         internal Tuple<int, int> StartingLocation { get; set; }
         internal Direction StartingFacingDirection { get; set; }

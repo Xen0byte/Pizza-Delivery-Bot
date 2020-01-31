@@ -10,15 +10,15 @@ namespace PizzaDeliveryBot.Logic
     {
         internal static readonly List<string> Orders = OrdersParser.GetSanitizedOrders();
 
-        internal static List<Delivery> BuildRoute()
+        internal static List<Order> BuildRoute()
         {
             if (!InputDataValidation.ValidateOrders(Orders)) throw new ValidationException();
 
-            List<Delivery> deliveries = new List<Delivery>();
+            List<Order> orders = new List<Order>();
 
             for (int i = 0; i <= Orders.Count - 3; i += 3)
             {
-                Delivery delivery = new Delivery // TODO: Make This Prettier
+                Order order = new Order // TODO: Make This Prettier
                 {
                     StartingLocation = Tuple.Create(int.Parse(Orders[i][0].ToString()), int.Parse(Orders[i][1].ToString())),
                     StartingFacingDirection = DirectionParser.ParseDirection(Orders[i][2].ToString()),
@@ -27,10 +27,10 @@ namespace PizzaDeliveryBot.Logic
                     EndingFacingDirection = DirectionParser.ParseDirection(Orders[i + 2][2].ToString())
                 };
 
-                deliveries.Add(delivery);
+                orders.Add(order);
             }
 
-            return deliveries;
+            return orders;
         }
     }
 }
