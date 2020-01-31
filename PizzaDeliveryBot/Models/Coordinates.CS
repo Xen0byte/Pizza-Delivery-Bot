@@ -1,18 +1,17 @@
-﻿using System.Drawing;
-
-namespace PizzaDeliveryBot.Models
+﻿namespace PizzaDeliveryBot.Models
 {
     internal class Coordinates
     {
-        private int _X;
-        private Point _XY;
-        private int _Y;
+        public int X { get; set; }
+        public int Y { get; set; }
 
-        public Coordinates(int X, int Y)
+        internal Coordinates(int X, int Y)
         {
-            _X = X;
-            _Y = Y;
-            _XY = new Point(X, Y);
+            this.X = X;
+            this.Y = Y;
         }
+
+        internal Coordinates NewX(int newX) => new Coordinates(newX, Y);
+        internal Coordinates NewY(int newY) => new Coordinates(X, newY);
     }
 }

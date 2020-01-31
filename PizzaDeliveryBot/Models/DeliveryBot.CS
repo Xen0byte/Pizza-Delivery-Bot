@@ -43,7 +43,7 @@ namespace PizzaDeliveryBot.Models
 
         internal static void MoveForward()
         {
-            Tuple<int, int> coordinatesStore = CurrentLocation;
+            Coordinates coordinatesStore = CurrentLocation;
 
             CurrentLocation = CurrentFacingDirection switch
             {

@@ -8,7 +8,7 @@ namespace PizzaDeliveryBot.Models
     internal static class DeliveryRoute
     {
         internal static List<Order> Deliveries = GenerateDeliveryRoute.BuildRoute();
-        internal static Tuple<int, int> CurrentLocation { get; set; }
+        internal static Coordinates CurrentLocation { get; set; }
         internal static Direction CurrentFacingDirection { get; set; }
     }
 }
