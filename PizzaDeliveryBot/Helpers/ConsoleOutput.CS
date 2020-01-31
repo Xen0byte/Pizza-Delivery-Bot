@@ -7,9 +7,9 @@ namespace PizzaDeliveryBot.Helpers
     {
         internal static string GetCoordinatesWithSign(Coordinates coordinates)
         {
-            if (coordinates.Item1 >= 0 && coordinates.Item2 >= 0) return $"+{coordinates.Item1:D2}:+{coordinates.Item2:D2}";
-            if (coordinates.Item1 >= 0) return $"+{coordinates.Item1:D2}:{coordinates.Item2:D2}";
-            if (coordinates.Item2 >= 0) return $"{coordinates.Item1:D2}:+{coordinates.Item2:D2}";
+            if (coordinates.X >= 0 && coordinates.Y >= 0) return $"+{coordinates.X:D2}:+{coordinates.Y:D2}";
+            if (coordinates.X >= 0) return $"+{coordinates.X:D2}:{coordinates.Y:D2}";
+            if (coordinates.Y >= 0) return $"{coordinates.X:D2}:+{coordinates.Y:D2}";
 
             throw new ArgumentException();
         }

@@ -47,10 +47,10 @@ namespace PizzaDeliveryBot.Models
 
             CurrentLocation = CurrentFacingDirection switch
             {
-                Direction.North => new Tuple<int, int>(CurrentLocation.Item1, CurrentLocation.Item2 + 1),
-                Direction.East => new Tuple<int, int>(CurrentLocation.Item1 + 1, CurrentLocation.Item2),
-                Direction.South => new Tuple<int, int>(CurrentLocation.Item1, CurrentLocation.Item2 - 1),
-                Direction.West => new Tuple<int, int>(CurrentLocation.Item1 - 1, CurrentLocation.Item2),
+                Direction.North => new Coordinates(CurrentLocation.X, CurrentLocation.Y + 1),
+                Direction.East => new Coordinates(CurrentLocation.X + 1, CurrentLocation.Y),
+                Direction.South => new Coordinates(CurrentLocation.X, CurrentLocation.Y - 1),
+                Direction.West => new Coordinates(CurrentLocation.X - 1, CurrentLocation.Y),
                 _ => throw new ArgumentException()
             };
 
