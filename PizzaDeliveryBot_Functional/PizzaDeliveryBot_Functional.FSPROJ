@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.SDK">
+
+  <PropertyGroup>
+    <OutputType>EXE</OutputType>
+    <TargetFramework>NetCoreApp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Data\ORDERS.TXT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="DeliverPizza.FS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>
