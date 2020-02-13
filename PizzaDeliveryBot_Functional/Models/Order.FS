@@ -1,8 +1,9 @@
 ﻿module Order
 
 open DeliveryBot
+open Instruction
 
 type Order = {
-Start: DeliveryBot
+    Start: DeliveryBot
     Instructions: Instruction list
-End: DeliveryBot }
+    End: DeliveryBot }
