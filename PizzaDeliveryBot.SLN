@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDeliveryBot_ObjectOriented", "PizzaDeliveryBot_ObjectOriented\PizzaDeliveryBot_ObjectOriented.CSPROJ", "{6A9305FB-D94F-4465-83F8-6B8D3D3BF355}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDeliveryBot-ObjectOriented", "PizzaDeliveryBot-ObjectOriented\PizzaDeliveryBot-ObjectOriented.CSPROJ", "{6A9305FB-D94F-4465-83F8-6B8D3D3BF355}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{87BCD47F-38CA-4803-9041-4A36FB6F9094}"
 	ProjectSection(SolutionItems) = preProject
 		INSTRUCTIONS.TXT = INSTRUCTIONS.TXT
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PizzaDeliveryBot_Functional", "PizzaDeliveryBot_Functional\PizzaDeliveryBot_Functional.FSPROJ", "{DBB671D9-AE1C-4052-8AA4-5A34B462B12A}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "PizzaDeliveryBot-Functional", "PizzaDeliveryBot-Functional\PizzaDeliveryBot-Functional.FSPROJ", "{DBB671D9-AE1C-4052-8AA4-5A34B462B12A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
