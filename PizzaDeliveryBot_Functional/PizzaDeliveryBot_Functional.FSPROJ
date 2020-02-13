@@ -6,14 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Models\Direction.FS" />
+    <Compile Include="Models\DeliveryBot.FS" />
+    <Compile Include="Models\Instruction.FS" />
+    <Compile Include="Models\Order.FS" />
     <None Include="Data\ORDERS.TXT">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="DeliverPizza.FS" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
