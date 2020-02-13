@@ -17,7 +17,7 @@ let parseDirection = function
     | _ -> failwith "Invalid Direction"
 
 let parseState (deliveryBotState: string) = 
-    let state = deliveryBotState |> split " "
+    let state = deliveryBotState |> split " " (* [split ""] Should Be, In Theory, More Robust Than [split " "] Because [split] Removes Empty Entries *)
     { Coordinates = int state.[0], int state.[1]; FacingDirection = parseDirection state.[2] }
 
 let parseInstruction = function
