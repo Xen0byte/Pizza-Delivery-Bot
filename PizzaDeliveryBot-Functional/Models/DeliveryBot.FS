@@ -3,5 +3,5 @@
 open Direction
 
 type DeliveryBot = {
-    Position: int * int
-    Facing: Direction }
+    Coordinates: int * int
+    FacingDirection: Direction }

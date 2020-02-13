@@ -4,6 +4,6 @@ open DeliveryBot
 open Instruction
 
 type Order = {
-    Start: DeliveryBot
+    StartingLocation: DeliveryBot
     Instructions: Instruction list
-    End: DeliveryBot }
+    EndingLocation: DeliveryBot }

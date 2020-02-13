@@ -13,6 +13,7 @@
     <Compile Include="Models\DeliveryBot.FS" />
     <Compile Include="Models\Instruction.FS" />
     <Compile Include="Models\Order.FS" />
+    <Compile Include="Helpers\OrdersParser.FS" />
     <Compile Include="DeliverPizza.FS" />
   </ItemGroup>
 
