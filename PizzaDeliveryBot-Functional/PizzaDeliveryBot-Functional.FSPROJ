@@ -14,6 +14,7 @@
     <Compile Include="Models\Instruction.FS" />
     <Compile Include="Models\Order.FS" />
     <Compile Include="Helpers\OrdersParser.FS" />
+    <Compile Include="Logic\RunDeliveryRoute.FS" />
     <Compile Include="DeliverPizza.FS" />
   </ItemGroup>
 
