@@ -4,6 +4,7 @@ open Direction
 open Instruction
 open DeliveryBot
 open Order
+open System
 
 let turnRight = function 
     | North -> East
@@ -31,8 +32,10 @@ let executeInstruction deliveryBot instruction =
     | MoveForward -> { deliveryBot with Coordinates = moveForward deliveryBot.Coordinates deliveryBot.FacingDirection }
 
 let terminalOutput deliveryBot instruction = 
-    printfn "Delivery Bot :: %A" deliveryBot
-    printfn "Instruction  :: %A" instruction
+    printfn "Coordinates      :: %A" deliveryBot.Coordinates
+    printfn "Facing Direction :: %A" deliveryBot.FacingDirection
+    printfn "Next Instruction :: %s" (instruction.ToString().Replace("TurnLeft", "Turn Left").Replace("TurnRight", "Turn Right").Replace("MoveForward", "Move Forward"))
+    printfn "%s" Environment.NewLine
     executeInstruction deliveryBot instruction
         
 let validateDeliveryRoute route = 
@@ -41,6 +44,6 @@ let validateDeliveryRoute route =
         ||> List.fold terminalOutput
 
     if (route.EndingLocation = order) then
-        "Success"
+        sprintf "Pizza has successfully been delivered at coordinates %A, facing %A." order.Coordinates order.FacingDirection
     else
         sprintf "Expected :: %A\r\nActual   :: %A" route.EndingLocation order
