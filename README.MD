@@ -1,11 +1,9 @@
-# Journeys
-
-A while back, a friend of mine applied for a software development job. They gave him a little take home test that he also shared with me.
-I really enjoyed the challenge. This repo contains my attempt at meeting it.
-
 ### The Challenge
 
-You are given a file, something like this:
+You have a robot.
+
+You are also given a file along the lines of:
+
 ```
 1 1 E
 RFRFRFRF
@@ -19,29 +17,38 @@ FRRFLLFFRRFLL
 LLFFFLFLFL
 2 4 S
 ```
-It contains zero to many (in this case 3) journeys. 
-Here's the first one:
+
+The file contains zero to many (in this case, three) journeys.
+
+Here is the first one:
+
 ```
 1 1 E
 RFRFRFRF
 1 1 E
 ```
-Each one starts with the initial coordinates of the robot (1 1, in this case) and the direction it is pointing in; in this case E = East.
+
+Each journey starts with the initial coordinates of the robot (1 1, in this case), and the direction it is pointing in; in this case E = East.
+
 The directions are as follows:
+
 ```
 N = North
 E = East
 S = South
 W = West
 ```
-Following the starting conditions are a list of commands:
+
+Following the starting conditions, are a list of commands:
+
 ```
 RFRFRFRF
 ```
+
 Each character is a command, either to turn (L = left, R = right) or to move forwards (F).
 
-Finally the journey ends with another set of coordinates and a direction. This is the expected position and orientation of your robot at the 
-end of the journey. Your program should check that it ends at the specified coordinates and facing in the given direction.
+Finally, the journey ends with another set of coordinates and a direction. This is the expected position and orientation of your robot at the end of the journey.
 
-The challenge is to parse the input file, set the start position of your robot, then have it execute the instructions and check its final postion with 
-the expected position.
+Your program should check that the robot ends its journey at the specified coordinates, and facing in the given direction.
+
+The assignment is to parse the input file, set the start position of your robot, then have it execute the instructions, and check its final position with the expected position.
